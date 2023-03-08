@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Flask</title>
+</head>
+<body align=center>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"><legend><h1>CALCULATOR</h1></legend></div>
+        <div class="col-md-4"></div>
+    </div>
+        <br>
+        <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal" action={{ url_for('home') }}  method="post">
+                <div class="form-group">
+                    <label class="control-label col-xs-3" for="var_1">Número 1:</label>
+                    <div class="col-xs-7">
+                        <input type="number" class="form-control" name="var_1" placeholder="&nbsp;0&nbsp;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-3" for="var_1">Número 2:</label>
+                    <div class="col-xs-7">
+                        <input type="number" class="form-control" name="var_2" placeholder="&nbsp;0&nbsp;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-xs-3">Operação:</label>
+                    <div class="col-xs-5">
+                        <select class="form-control" name="operacao">
+                            <option value="adicao">Adição</option>
+                            <option value="subtracao">Subtração</option>
+                            <option value="multiplicacao">Multiplicação</option>
+                            <option value="divisao">Divisão</option>
+                            <option value="potencia">Potenciação</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-3 col-xs-9">
+                        <input type="submit" class="btn btn-success" value="Submit">
+                        <input type="reset" class="btn btn-danger" value="Reset">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div>
+        {% if result %}
+        <p>Seu resultado é: </p>
+        <p>{{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
